@@ -16,3 +16,10 @@ data.frame(x=seq(from=-7, to=7, by=0.001)) %>%
 
 plot(df,type="l",col="yellow")
 
+library(plotly)
+with(df,plot_ly( x = x, y = y, z = rep(0,nrow(df)),type = "scatter3d", mode = "markers")%>%
+  layout(scene = list(
+           xaxis = list(title = ""), 
+           yaxis = list(title = ""), 
+           zaxis = list(title = "")))
+)
